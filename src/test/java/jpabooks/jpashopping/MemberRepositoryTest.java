@@ -25,9 +25,11 @@ public class MemberRepositoryTest {
     @Rollback(false)
     public void testMember() {
         Member member = new Member();
+        Member member1=new Member();
         member.setUsername("memberA");
         Long savedId = memberRepository.save(member);
         Member findMember = memberRepository.find(savedId);
+
         assertThat(findMember.getId()).isEqualTo(member.getId());
     }
 }
