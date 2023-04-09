@@ -10,12 +10,12 @@ spring:
       ddl-auto: create
     properties:
       hibernate:
-        show_sql: true
-        open-in-view: false
+#        show_sql: true
         format_sql: true
+    open-in-view: false
 logging.level:
   org.hibernate.SQL: debug
-  org.hibernate.orm.bind: trace
+#  org.hibernate.orm.bind: trace
 #  server:
 #    port:8081
 server:
