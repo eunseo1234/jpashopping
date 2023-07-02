@@ -27,14 +27,14 @@ public class OrderItem {
     private int count;          //수량
 
 //생성
-    public static OrderItem createOrderItem(Item item,int orderPrice,int count){
-        OrderItem orderItem=new OrderItem();
+    public static OrderItem createOrderItem(Item item,int orderPrice,int count) {
+        OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
         orderItem.setOrderprice(orderPrice);
         orderItem.setCount(count);
 
         item.removeStock(count);       //수량 제거
-         return orderItem;
+        return orderItem;
     }
 //비즈니스 로직
     public void cancel(){

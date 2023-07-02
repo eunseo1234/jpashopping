@@ -1,5 +1,6 @@
 package jpabooks.jpashopping.domain;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,8 @@ import java.util.List;
 
 @Entity
 @Table(name="orders")
-@Getter@Setter
+@Getter
+@Setter
 //회원,배송 정보,주문상태
 public class Order {
     @Id
@@ -30,7 +32,7 @@ public class Order {
     private LocalDateTime orderDate; //주문시간
     @Enumerated(EnumType.STRING)
     private OrderStatus status; //주문상태 [ORDER, CANCEL]
-    //==연관관계 메서드==//
+
     public void setMember(Member member) {
         this.member = member;
         member.getOrders().add(this);
